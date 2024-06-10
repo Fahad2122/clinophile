@@ -1,0 +1,25 @@
+{
+  "name": "spl-token",
+  "version": "1.0.0",
+  "description": "Solana Token",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fahad2122/clinophile.git"
+  },
+  "author": "Fahad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fahad2122/clinophile/issues"
+  },
+  "homepage": "https://github.com/Fahad2122/clinophile#readme",
+  "dependencies": {
+    "@solana-developers/helpers": "^2.3.0",
+    "@solana/spl-token": "^0.4.6",
+    "@solana/web3.js": "^1.92.3",
+    "esrun": "^3.2.26"
+  }
+}
