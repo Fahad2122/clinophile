@@ -8,8 +8,9 @@ const user = getKeypairFromEnvironment("SECRET_KEY");
 
 const connection = new Connection(clusterApiUrl("devnet"));
 
-const airdropSignature = await connection.requestAirdrop(user.publicKey, 5 * LAMPORTS_PER_SOL);
-await connection.confirmTransaction(airdropSignature);
+// Airdrop if required
+await airdropIfRequired(connection, user.publicKey, 5 * LAMPORTS_PER_SOL, 1 * LAMPORTS_PER_SOL);
+
 const solBalance = await connection.getBalance(user.publicKey);
 console.log(`${user.publicKey.toBase58()} Balance: ${solBalance}`);
 
@@ -18,9 +19,8 @@ const tokenMint = await createMint(
     user,
     user.publicKey,
     user.publicKey,
-    6,
-    user
-)
+    6
+);
 
 const explorer = await getExplorerLink("address", tokenMint.toString(), "devnet");
 
